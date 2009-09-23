@@ -1,0 +1,10 @@
+from Products.ExternalMethod.ExternalMethod import ExternalMethod
+
+from Products.CMFCore.tests.base.security import AnonymousUser, OmnipotentUser
+from AccessControl.SecurityManagement import newSecurityManager
+user = OmnipotentUser().__of__(app)
+newSecurityManager(None, user)
+
+ExternalMethod('temp','temp','RhaptosCollaborationTool.Upgrade','migrateCollabRequestsToDictionaries')(app.plone)
+
+get_transaction().commit()

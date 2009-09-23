@@ -1,0 +1,34 @@
+RhaptosCollaborationTool-0.9
+  - upgrade to Plone 2.5
+
+RhaptosCollaborationTool-0.8
+  - addition of optional roles (currently Editor and Translator)
+
+RhaptosCollaborationTool-0.7
+  - i18n Translation Support
+
+RhaptosCollaborationTool-0.6.1
+  - Fixed bug: Could not cancel role requests
+
+RhaptosCollaborationTool-0.6
+  - Restructured collaboration requests to be dictionaries instead of lists
+  - Refactored some collaboration functions 
+
+RhaptosCollaborationTool-0.5
+  - Risa -> Rhaptos rename
+  - Moved CollaborationManager class from RhaptosModuleEditor here
+  - Removed some old cruft
+
+CMFCollaborationTool-0.4
+  - Updated README
+  - Added license info
+
+CMFCollaborationTool-0.3
+  - Automatically create catalog in __init__
+  - Provide ZMI tab to access catalog
+
+CMFCollaborationTool-0.2
+  - Stub __init__ in CollaborationTool to fix creation using ToolInit
+
+CMFCollaborationTool-0.1
+  - Initial release

@@ -1,0 +1,14 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:tal="http://xml.zope.org/namespaces/tal" 
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xml:lang="en-US" lang="en-US" tal:omit-tag="">
+  <span tal:replace="structure here/manage_page_header">Header</span>
+  <span tal:define="manage_tabs_message options/manage_tabs_message | nothing"
+    tal:replace="structure here/manage_tabs">Tabs</span>
+
+  <h3> <code>portal_collaboration</code> Tool </h3>
+    
+  <p>This tool coordinates collaboration requests between members</p>
+  
+  <span tal:replace="structure here/manage_page_footer">Footer</span>
+</html>
