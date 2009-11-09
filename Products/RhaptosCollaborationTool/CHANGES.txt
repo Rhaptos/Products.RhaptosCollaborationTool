@@ -1,3 +1,6 @@
+RhaptosCollaborationTool-0.9.1
+  - #9809: fix roles permission bug from collxml
+
 RhaptosCollaborationTool-0.9
   - upgrade to Plone 2.5
 

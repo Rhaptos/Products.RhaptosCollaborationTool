@@ -10,6 +10,10 @@ Public License Version 2.1 (LGPL).  See LICENSE.txt for details.
 
 import Acquisition
 from AccessControl import getSecurityManager, ClassSecurityInfo
+
+from AccessControl.SecurityManagement import newSecurityManager, setSecurityManager
+from Products.CMFCore.tests.base.security import OmnipotentUser
+
 from DateTime import DateTime
 
 _marker = None
@@ -65,10 +69,21 @@ class CollaborationManager(Acquisition.Implicit):
 
     def updateRoleMetadata(self):
         """Update the metadata with the new roles"""
-             
-        # FIXME: We shouldn't be doing this.
+        # since _writeMetadata changes the target module's contents, and the button is pushed
+        # by someone who may not have any editing permission on the object (in a personal Workspace, say)
+        # we have to increase permission level in order to allow this.
+        # FIXME: We shouldn't be doing this. It would be better if no change on the target was needed...
+        
+        # store old security manager, create a new powerful one
+        oldmgr = getSecurityManager()
+        user = OmnipotentUser()  #.__of__(self.portal_url.getPortalObject())
+        newSecurityManager(self.REQUEST, user)
+        
+        # change the metadata section of the CNXML to reflect current roles
         self._writeMetadata()
         
+        # restore old, normal, security manager
+        setSecurityManager(oldmgr)
 
     def editCollaborationRequest(self, id, roles):
         """Change the roles on a collaboration request"""
