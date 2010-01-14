@@ -1,0 +1,18 @@
+Static Implementation Tests
+===========================
+ 	
+Let's just make sure that our static views are working as expected.
+	
+The first thing we need to do is to make sure the interfaces are
+being correctly implemented::
+ 	
+    >>> from Products.RhaptosCollaborationTool.CollaborationFolder import CollaborationFolder, CollabRequest
+    >>> CollabRequest.meta_type
+    'Collaboration Request'
+    >>> CollabRequest.default_catalog
+    'portal_collaboration'
+    >>> CollaborationFolder.meta_type
+    'Collaboration Folder'
+    >>> CollabRequest._properties
+    ({'type': 'string', 'id': 'user', 'mode': 'w'}, {'type': 'string', 'id': 'requester', 'mode': 'w'}, {'type': 'lines', 'id': 'roles', 'mode': 'w'}, {'type': 'string', 'id': 'status', 'mode': 'w'})
+    
