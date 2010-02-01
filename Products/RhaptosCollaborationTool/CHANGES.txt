@@ -1,3 +1,6 @@
+RhaptosCollaborationTool-0.10
+  - generic setup refactor. Rhaptos 2.0 release
+
 RhaptosCollaborationTool-0.9.1
   - #9809: fix roles permission bug from collxml
 
