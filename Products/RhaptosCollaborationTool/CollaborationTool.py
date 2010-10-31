@@ -12,6 +12,8 @@ Public License Version 2.1 (LGPL).  See LICENSE.txt for details.
 $Id$
 """
 
+from zope.interface import implements
+
 from Products.CMFCore.utils import UniqueObject
 from Products.CMFCore.utils import getToolByName
 from OFS.Folder import Folder
@@ -28,7 +30,7 @@ from interfaces.portal_collaboration import portal_collaboration as ICollaborati
 class CollaborationTool (UniqueObject, CollaborationFolder):
     """ This tool provides a way to request a collaboration with another user and allows them to accept or decline
     """
-    __implements__ = ICollaborationTool
+    implements(ICollaborationTool)
 
     id = 'portal_collaboration'
     meta_type = 'Collaboration Tool'
