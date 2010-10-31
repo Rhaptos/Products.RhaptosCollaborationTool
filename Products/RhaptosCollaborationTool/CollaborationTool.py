@@ -18,7 +18,7 @@ from OFS.Folder import Folder
 from Globals import InitializeClass
 from AccessControl import ClassSecurityInfo
 from Products.PageTemplates.PageTemplateFile import PageTemplateFile
-from Products.CMFCore.CMFCorePermissions import View, ManagePortal
+from Products.CMFCore.permissions import View, ManagePortal
 from Products.ZCatalog.ZCatalog import ZCatalog
 from CollaborationFolder import CollaborationFolder
 
