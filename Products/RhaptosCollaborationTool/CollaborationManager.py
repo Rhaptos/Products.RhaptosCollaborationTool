@@ -165,7 +165,7 @@ class CollaborationManager(Acquisition.Implicit):
             role_name = r.lower() + 's'
             if not hasattr(self.aq_base, role_name):
                 setattr(self, role_name, [])
-            old_role = list(self[role_name])
+            old_role = list(getattr(self,role_name))
             try:
                 new_role = list(newRoles[r][:])
             except KeyError:
