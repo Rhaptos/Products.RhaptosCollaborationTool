@@ -1,3 +1,6 @@
+RhaptosCollaborationTool-0.10.1
+  - default role lookup
+
 RhaptosCollaborationTool-0.10
   - generic setup refactor. Rhaptos 2.0 release
 
